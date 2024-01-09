@@ -167,6 +167,69 @@ function saveTasksToLocalStorage() {
   localStorage.setItem('totalTime', totalTime.toString())
 }
 
+// Função para carregar tarefas do Local Storage ou usar dados padrão
+function loadTasks() {
+  let savedTasks = localStorage.getItem('studyTasks')
+  if (savedTasks) {
+    tasks = JSON.parse(savedTasks)
+  } else {
+    // Dados padrão se não houver tarefas salvas
+    tasks = [
+      {
+        name: 'Língua Portuguesa',
+        time: 7200,
+        subTasks: [
+          { name: 'Interpretação e Compreensão de texto' },
+          { name: 'Estudo sobre coesão' },
+          { name: 'coerência e estrutura textual' }
+        ],
+        intervalId: null
+      },
+      {
+        name: 'Raciocínio Lógico Matemático',
+        time: 5400,
+        subTasks: [
+          { name: 'Conceitos básicos de lógica (proposições e conectivos)' },
+          { name: 'Resolução de problemas simples de lógica' }
+        ],
+        intervalId: null
+      },
+      { name: 'Pausa', time: 1800, subTasks: [], intervalId: null },
+      {
+        name: 'Realidade Política, Social e Econômica de SC',
+        time: 3600,
+        subTasks: [
+          { name: 'Estudo da estrutura geológica e relevo de Santa Catarina' }
+        ],
+        intervalId: null
+      },
+      {
+        name: 'Noções de Informática',
+        time: 3600,
+        subTasks: [
+          {
+            name: 'Conceitos básicos de hardware e software (se aplicável ao cargo)'
+          }
+        ],
+        intervalId: null
+      },
+      {
+        name: 'Revisão e Prática',
+        time: 3600,
+        subTasks: [
+          { name: 'Revisão do conteúdo estudado' },
+          {
+            name: 'Exercícios práticos, especialmente em Língua Portuguesa e Raciocínio Lógico Matemático'
+          }
+        ],
+        intervalId: null
+      }
+    ]
+    localStorage.setItem('studyTasks', JSON.stringify(tasks))
+  }
+  displayTasks() // Função para exibir as tarefas
+}
+
 function loadTasksFromLocalStorage() {
   let savedTasks = localStorage.getItem('tasks')
   let savedTotalTime = localStorage.getItem('totalTime')
@@ -181,5 +244,6 @@ function loadTasksFromLocalStorage() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  loadTasks() // Carrega tarefas quando o documento é carregado
   loadTasksFromLocalStorage()
 })
