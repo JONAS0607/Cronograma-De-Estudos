@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* Fundo escuro */
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+header, footer {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+header h1 {
+  color: #4caf50; /* Verde claro */
+  margin-bottom: 1rem;
+}
+
+.task {
+  background-color: #1e1e1e; /* Fundo de cada tarefa */
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border-left: 5px solid #4caf50; /* Borda lateral verde claro */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subtask {
+  background-color: #252525; /* Fundo das subtarefas */
+  margin-left: 20px;
+  border-left: 3px solid #4caf50; /* Borda lateral verde claro para subtarefa */
+  padding: 5px;
+}
+
+.timer {
+  background-color: #333; /* Fundo do cronômetro */
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para o cronômetro */
+}
+
+button {
+  background-color: #333333; /* Botões com fundo mais escuro */
+  color: #ffffff;
+  border: none;
+  padding: 5px 15px;
+  margin: 0 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  background-color: #4caf50; /* Cor ao passar o mouse */
+}
+
+button i {
+  margin-right: 5px;
+}
+
+footer .total-time {
+  background-color: #1e1e1e; /* Cor de fundo para o rodapé */
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+footer .total-time h3 {
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+}

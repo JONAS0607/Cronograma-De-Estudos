@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cronograma de Estudos</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Cronograma de Estudos</h1>
+      </header>
+
+      <div id="tasks">
+        <!-- Tarefas serão inseridas aqui pelo JavaScript -->
+      </div>
+
+      <div class="add-task">
+        <input type="text" id="newTaskName" placeholder="Nome da Matéria" />
+        <input type="number" id="newTaskTime" placeholder="Tempo em minutos" />
+        <button onclick="addTask()">Adicionar Matéria</button>
+      </div>
+
+      <footer>
+        <div class="total-time">
+          <h3>
+            Total <span id="totalTime">00:00:15</span>
+            <button onclick="resetTotalTime()">
+              <i class="fas fa-history"></i>
+            </button>
+          </h3>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
